@@ -20,11 +20,3 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-
-struct HomeHeaderView: View {
-    
-    var body: some View {
-        
-        
-    }
-}
