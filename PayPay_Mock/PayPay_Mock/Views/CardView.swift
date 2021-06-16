@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CodeView: View {
+struct CardView: View {
     
     var body: some View {
         
@@ -21,7 +21,7 @@ struct CodeView: View {
                 
                 Image(systemName: "qrcode")
                     .resizable()
-                    .frame(width: 65, height: 65)
+                    .frame(width: 70, height: 70)
                 
                 VStack(spacing: 5) {
                     
@@ -33,6 +33,7 @@ struct CodeView: View {
                             .rotationEffect(.degrees(10))
                             .background(Color.red)
                             .foregroundColor(.white)
+                            .cornerRadius(3)
                         
                         Text("PayPay")
                             .bold()
@@ -54,13 +55,20 @@ struct CodeView: View {
                         }) {
                             
                             Circle()
-                                .frame(width: 20, height: 20)
+                                .frame(width: 30, height: 30)
                                 .foregroundColor(.red)
                                 .opacity(0.3)
+                                .overlay(
+                                    Circle()
+                                        .frame(width: 20, height: 20)
+                                        .foregroundColor(.red)
+                                        .opacity(0.35)
+                                )
                         }
                     }
                     .padding(.trailing, 5)
                 }
+                .padding(.top, 15)
             }
             .padding(.leading, 30)
         }
@@ -70,7 +78,7 @@ struct CodeView: View {
 
 struct codeView_Previews: PreviewProvider {
     static var previews: some View {
-        CodeView()
+        CardView()
             .previewLayout(.sizeThatFits)
     }
 }
